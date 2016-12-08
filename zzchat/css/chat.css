@@ -1,0 +1,65 @@
+.wrap {
+	border:1px solid #ccc;
+	width:600px;
+	overflow:hidden;
+	margin:auto;
+	padding:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+#chatbox {
+	overflow:hidden;
+	height:400px;
+	border:1px solid #ccc;
+	margin-bottom:10px;
+}
+
+#chatbox ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#chatbox ul li {
+	border-bottom:1px solid #ccc;
+	padding:5px;
+	font-size:14px;
+}
+
+#chatbox strong {
+	color:#FF0000;
+}
+
+.msgbox {
+	overflow:hidden;
+}
+
+#msgfield {
+	border:1px solid #ccc;
+	padding:5px;
+	font-size:16px;
+	box-sizing:border-box;
+	width:100%;
+	outline:none;
+	font-weight:bold;
+}
+
+#name {
+	border:1px solid #ccc;
+	padding:5px;
+	font-size:16px;
+	box-sizing:border-box;
+	width:100%;
+	outline:none;
+}
+
+.sendbutton {
+	border:none;
+	padding:5px;
+	font-size:16px;
+	box-sizing:border-box;
+	width:100%;
+	background-color:#0099FF;
+	color:#FFFFFF;
+}
