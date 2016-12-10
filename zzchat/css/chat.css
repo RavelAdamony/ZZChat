@@ -1,6 +1,6 @@
 .wrap {
 	border:1px solid #ccc;
-	width:600px;
+	width:800px;
 	overflow:hidden;
 	margin:auto;
 	padding:10px;
@@ -8,9 +8,23 @@
 	font-size:14px;
 }
 
+#block{
+	border:1px solid #ccc;
+	margin-left:10px;
+	float:right;
+	width:100px;
+}
+
+#onlineusers{
+	border:1px solid #ccc;
+	margin-left:10px;
+	float:right;
+	width:100px;
+}
+
 #chatbox {
 	overflow:hidden;
-	height:400px;
+	height:600px;
 	border:1px solid #ccc;
 	margin-bottom:10px;
 }

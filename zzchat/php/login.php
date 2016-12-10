@@ -8,6 +8,13 @@
 		$msg="<span style='color:green'>Registered</span>";
 	}
 	
+	/*If the user is already online, go to the chat page*/
+	if(isset($_SESSION['Username'])){
+		header("location:chat.php");
+		exit;
+	}
+	
+	/*Get the last used username if it exists*/
 	$CookieUsername = isset($_COOKIE["CookieUsername"]) ? $_COOKIE["CookieUsername"] : '';
 	
 	/* Check Login form submitted */	
@@ -42,8 +49,8 @@
 			setcookie("CookieUsername", $Username);
 			fclose($myfile);
 			
-			/*Add the current user to the list of connected users : connected.txt*/
-			$myfile = fopen("../txt/connected.txt", "a+");
+			/*Add the current user to the list of online users : online.txt*/
+			$myfile = fopen("../txt/online.txt", "a+");
 			fwrite($myfile, $Username."\r\n");
 			fclose($myfile);
 			
