@@ -1,6 +1,9 @@
 <?php
 	/* Start the session */
-	session_start(); 
+	session_start();
+	
+	/*Language handling*/
+	include('languages/languages.php');
 	
 	/* Check if the register form has been submitted */	
 	if(isset($_POST['Submit'])){
@@ -56,33 +59,68 @@
 	}
 ?>
 
-<form action="" method="post" name="Register_Form">
-    <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-    
-        <?php if(isset($msg)){?>
-            <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
-        <?php } ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
-        <tr>
-            <td colspan="2" align="left" valign="top"><h3>Register</h3></td></tr>
-        <tr>
-            <td align="right" valign="top">Username</td>
-            <td><input name="Username" type="text" class="Input"></td>
-        </tr>
-        <tr>
-            <td align="right">Password</td>
-            <td><input name="Password" type="password" class="Input"></td>
-        </tr>
-                <tr>
-            <td align="right">Confirm Password</td>
-            <td><input name="ConfirmPassword" type="password" class="Input"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-            	<input name="Submit" type="submit" value="Login" class="Button3">
-            	<input type="button" value="Already have an account?" onclick="window.location.href='login.php'">
-            </td>
-        </tr>
-    </table>
-</form>
+        <!-- The website stylesheet -->
+        <link rel="stylesheet" type="text/css" href="../css/register.css">
+        
+        <title><?php echo $lang['HEADER_REGISTER'];?></title>
+    </head>
+    <body>
+    	<div id="wrap">
+            <form action="" method="post" name="Register_Form">
+                <table width="500" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
+                
+                    <!--Success/error message field-->
+                    <?php if(isset($msg)){?>
+                        <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
+                    <?php } ?>
+                    
+                    <!-- Login -->
+                    <tr>
+                        <td colspan="2" align="left" valign="top"><h3><?php echo $lang['REGISTER'];?></h3></td>
+                    </tr>
+                    
+                    <!-- Username field -->
+                    <tr>
+                        <td align="right" valign="top"><?php echo $lang['USERNAME'];?></td>
+                        <td><input name="Username" type="text" class="Input"></td>
+                    </tr>
+                    
+                    <!-- Password field -->
+                    <tr>
+                        <td align="right"><?php echo $lang['PASSWORD'];?></td>
+                        <td><input name="Password" type="password" class="Input"></td>
+                    </tr>
+                    
+                    <!-- Confirm password field -->
+                    <tr>
+                        <td align="right"><?php echo $lang['CONFIRM_PASSWORD'];?></td>
+                        <td><input name="ConfirmPassword" type="password" class="Input"></td>
+                    </tr>
+                    
+                    <!-- Buttons -->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <!-- Register Button -->
+                            <input name="Submit" type="submit" value="<?php echo $lang['REGISTER'];?>" class="Button3">
+                            
+                            <!-- Go to the login page -->
+                            <input type="button" value="<?php echo $lang['REGISTER_TO_LOGIN'];?>" onclick="window.location.href='login.php'">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+             <!-- Language buttons -->
+            <div id="languageButtons">
+        		<a href="#" class="Lbutton" onClick="window.location.href='register.php?lang=eng'"><img src="../images/icons/english.png"></a>
+                <a href="#" class="Lbutton" onClick="window.location.href='register.php?lang=fr'"><img src="../images/icons/french.png"></a>
+            </div>
+        </div>
+	</body>
+</html>

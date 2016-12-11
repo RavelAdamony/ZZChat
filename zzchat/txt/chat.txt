@@ -3,3 +3,4 @@
 <li><strong>Alex</strong>: <b><b><b>Salut</b></b></b></li>
 <li><strong>Alex</strong>: <b><b><u>Salut</u></b> <u>lol</u></b></li>
 <li><strong>Alex</strong>: x<sup>2</sup></li>
+<li><strong>Alex</strong>: <mark>votre message ici.</mark></li>

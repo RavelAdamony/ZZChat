@@ -1,6 +1,9 @@
 <?php
-	/* Starts the session */
+	/* Start the session */
 	session_start(); 
+	
+	/*Language handling*/
+	include('languages/languages.php');
 	
 	/*If the user arrived at login.php from register.php, print a confirmation message of the user's registration*/
 	if(isset($_SESSION['Registered']) && $_SESSION['Registered']){
@@ -75,35 +78,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>ZZChat : Login</title>
+        
+        <!-- The website stylesheet -->
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        
+        <title><?php echo $lang['HEADER_LOGIN'];?></title>
     </head>
     <body>
-        <form action="" method="post" name="Login_Form">
-            <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-            
-                <!--Print the success/error message if needed-->
-                <?php if(isset($msg)){?>
-                    <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
-                <?php } ?>
+    	<div id="wrap">
+            <form action="" method="post" name="Login_Form">
+                <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
                 
-                <tr><td colspan="2" align="left" valign="top"><h3>Login</h3></td></tr>
+                    <!--Success/error message field-->
+                    <?php if(isset($msg)){?>
+                        <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
+                    <?php } ?>
+                    
+                    <!-- Login -->
+                    <tr><td colspan="2" align="left" valign="top"><h3><?php echo $lang['LOGIN'];?></h3></td></tr>
+                    
+                    <!-- Username field -->
+                    <tr>
+                        <td align="right" valign="top"><?php echo $lang['USERNAME'];?></td>
+                        <td><input name="Username" type="text" class="Input" value="<?php echo $CookieUsername; ?>"></td>
+                    </tr>
+                    
+                    <!-- Password field -->
+                    <tr>
+                        <td align="right"><?php echo $lang['PASSWORD'];?></td>
+                        <td><input name="Password" type="password" class="Input"></td>
+                    </tr>
+                    
+                    <!-- Buttons -->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <!-- Login Button -->
+                            <input name="SubmitLogin" type="submit" value="<?php echo $lang['LOGIN'];?>" class="Button3">
+                            
+                            <!-- Go to the register page -->
+                            <input type="button" value="<?php echo $lang['LOGIN_TO_REGISTER'];?>" onclick="window.location.href='register.php'">
+                        </td>
+                    </tr>
+                </table>
                 
-                <tr>
-                    <td align="right" valign="top">Username</td>
-                    <td><input name="Username" type="text" class="Input" value="<?php echo $CookieUsername; ?>"></td>
-                </tr>
-                <tr>
-                    <td align="right">Password</td>
-                    <td><input name="Password" type="password" class="Input"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input name="SubmitLogin" type="submit" value="Login" class="Button3">
-                        <input type="button" value="Register" onclick="window.location.href='register.php'">
-                    </td>
-                </tr>
-            </table>
-        </form>
+                <!-- Language buttons -->
+                <div id="languageButtons">
+                    <a href="#" class="Lbutton" onClick="window.location.href='login.php?lang=eng'"><img class="Lbutton" src="../images/icons/english.png"></a>
+                    <a href="#" class="Lbutton" onClick="window.location.href='login.php?lang=fr'"><img class="Lbutton" src="../images/icons/french.png"></a>
+                </div>
+            </form>
+		</div>
     </body>
 </html>

@@ -6,18 +6,21 @@
 */
 	$lang = array();
 	
-	//Login page
+	//Login / Register page
 	$lang['HEADER_LOGIN'] = 'ZZChat : Connexion';
+	$lang['HEADER_REGISTER'] = 'ZZChat : Créer un compte';
 	$lang['LOGIN'] = 'Se connecter';
-	$lang['INPUT_USERNAME_LOGIN'] = 'Pseudo';
-	$lang['INPUT_PASSWORD_LOGIN'] = 'Mot de passe';
-	$lang['REGISTER'] = 'Pas encore de compte?';
+	$lang['REGISTER'] = 'Créer un compte';
+	$lang['USERNAME'] = 'Pseudo';
+	$lang['PASSWORD'] = 'Mot de passe';
+	$lang['CONFIRM_PASSWORD'] = 'Confirmer le mot de passe';
+	$lang['LOGIN_TO_REGISTER'] = 'Pas encore de compte?';
+	$lang['REGISTER_TO_LOGIN'] = 'Déja un compte?';
 	
-	// Menu
-	$lang['MENU_HOME'] = 'Home';
-	$lang['MENU_ABOUT_US'] = 'About Us';
-	$lang['MENU_OUR_PRODUCTS'] = 'Our products';
-	$lang['MENU_CONTACT_US'] = 'Contact Us';
-	$lang['MENU_ADVERTISE'] = 'Advertise';
-	$lang['MENU_SITE_MAP'] = 'Site Map';
+	
+	// Chat
+	$lang['ONLINE_USERS'] = 'Utilisateurs en ligne';
+	$lang['LOGOUT'] = 'Se déconnecter';
+	$lang['SEND'] = 'Envoyer';
+	$lang['MSGFIELD_PLACEHOLDER'] = 'Entrez votre message ici.';
 ?>
