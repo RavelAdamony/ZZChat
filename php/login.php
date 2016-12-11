@@ -41,6 +41,7 @@
 			$currentUser = explode(";" , $line);
 				
 			/*if the information entered is the same as the ones of the current line, we stop the loop*/
+			include('hashequals.php');
 			if ($Username == $currentUser[0] && hash_equals($currentUser[1], crypt($Password, $currentUser[1])))$success = true;
 		}
 		
