@@ -49,8 +49,13 @@
 			setcookie("CookieUsername", $Username);
 			fclose($myfile);
 			
-			/*Add the current user to the list of online users : online.txt*/
+			/*Open the file containing the online users list : online.txt*/
 			$myfile = fopen("../txt/online.txt", "a+");
+			
+			/*Remove the user from the list of online users to prevent having the same user logged twice*/
+			file_put_contents("../txt/online.txt", str_replace($_SESSION['Username'] . "\r\n", "", file_get_contents("../txt/online.txt")));
+			
+			/*Add the user to the list of online users*/
 			fwrite($myfile, $Username."\r\n");
 			fclose($myfile);
 			
@@ -66,30 +71,39 @@
 	}
 ?>
 
-<form action="" method="post" name="Login_Form">
-    <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-    
-    	<!--Print the success/error message if needed-->
-        <?php if(isset($msg)){?>
-            <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
-        <?php } ?>
-        
-        <tr><td colspan="2" align="left" valign="top"><h3>Login</h3></td></tr>
-        
-        <tr>
-            <td align="right" valign="top">Username</td>
-            <td><input name="Username" type="text" class="Input" value="<?php echo $CookieUsername; ?>"></td>
-        </tr>
-        <tr>
-            <td align="right">Password</td>
-            <td><input name="Password" type="password" class="Input"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-            	<input name="SubmitLogin" type="submit" value="Login" class="Button3">
-                <input type="button" value="Register" onclick="window.location.href='register.php'">
-            </td>
-        </tr>
-    </table>
-</form>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ZZChat : Login</title>
+    </head>
+    <body>
+        <form action="" method="post" name="Login_Form">
+            <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
+            
+                <!--Print the success/error message if needed-->
+                <?php if(isset($msg)){?>
+                    <tr><td colspan="2" align="center" valign="top"><?php echo $msg;?></td></tr>
+                <?php } ?>
+                
+                <tr><td colspan="2" align="left" valign="top"><h3>Login</h3></td></tr>
+                
+                <tr>
+                    <td align="right" valign="top">Username</td>
+                    <td><input name="Username" type="text" class="Input" value="<?php echo $CookieUsername; ?>"></td>
+                </tr>
+                <tr>
+                    <td align="right">Password</td>
+                    <td><input name="Password" type="password" class="Input"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input name="SubmitLogin" type="submit" value="Login" class="Button3">
+                        <input type="button" value="Register" onclick="window.location.href='register.php'">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

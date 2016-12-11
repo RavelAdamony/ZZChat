@@ -79,7 +79,10 @@
         </tr>
         <tr>
             <td></td>
-            <td><input name="Submit" type="submit" value="Login" class="Button3"></td>
+            <td>
+            	<input name="Submit" type="submit" value="Login" class="Button3">
+            	<input type="button" value="Already have an account?" onclick="window.location.href='login.php'">
+            </td>
         </tr>
     </table>
 </form>

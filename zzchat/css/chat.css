@@ -8,17 +8,14 @@
 	font-size:14px;
 }
 
-#block{
+#rightwrap{
 	border:1px solid #ccc;
 	margin-left:10px;
 	float:right;
 	width:100px;
 }
 
-#onlineusers{
-	border:1px solid #ccc;
-	margin-left:10px;
-	float:right;
+#onlinelist{
 	width:100px;
 }
 
@@ -76,4 +73,8 @@
 	width:100%;
 	background-color:#0099FF;
 	color:#FFFFFF;
+}
+
+.texteditbutton {
+	border:1px solid #000;
 }

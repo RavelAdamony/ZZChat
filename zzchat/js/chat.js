@@ -25,3 +25,8 @@ function sendMsg() {
 	/*If after the message is added, the chatbox is full, we scroll down*/
 	$("#chatbox").animate({ scrollTop: $(document).height() }, "slow");
 }
+
+function insertTag(tag) {
+	var selection = $("#msgfield").getSelection().text;
+	$("#msgfield").replaceSelectedText('<'+tag+'>' + selection + '</'+tag+'>');
+}
