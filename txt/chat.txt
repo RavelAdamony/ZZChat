@@ -6,3 +6,4 @@
 <li><strong>Ravel</strong>: <del>Barré</del></li>
 <li><strong>Ravel</strong>: Texte<sub>Indice</sub></li>
 <li><strong>Ravel</strong>: Texte <sup>Exposant</sup></li>
+<li><strong>Alex</strong>: Bonjour, je suis un 2ème utilisateur.</li>
