@@ -1,4 +1,8 @@
 <?php
+
+	/*Disable warning reporting*/
+	error_reporting(E_ERROR | E_PARSE);
+
 	/* Start the session */
 	session_start(); 
 	

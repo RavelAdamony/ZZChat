@@ -1,0 +1,8 @@
+<li><strong>Ravel</strong>: Normal</li>
+<li><strong>Ravel</strong>: <b>En gras</b></li>
+<li><strong>Ravel</strong>: <u>Souligné</u></li>
+<li><strong>Ravel</strong>: <small>Petit</small></li>
+<li><strong>Ravel</strong>: <mark>Surligné</mark></li>
+<li><strong>Ravel</strong>: <del>Barré</del></li>
+<li><strong>Ravel</strong>: Texte<sub>Indice</sub></li>
+<li><strong>Ravel</strong>: Texte <sup>Exposant</sup></li>
